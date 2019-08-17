@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'homescreen.dart';
-
+import 'screens/main_screen.dart';
 
 class App extends StatelessWidget {
 @override 
@@ -15,7 +14,7 @@ title: "Hydrana",
 theme: ThemeData(
   primaryColor: Colors.blueAccent 
   ),
-  home: HomeScreen(),
+  home: MainScreen(),
 
 );
 

@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:hydrana/src/data/food_data.dart';
 import 'package:hydrana/src/widgets/food_category.dart';
-import 'widgets/home_top_info.dart';
-import 'widgets/search_field.dart';
-import 'widgets/happyhour_spots.dart';
+import '../widgets/home_top_info.dart';
+import '../widgets/search_field.dart';
+import '../widgets/happyhour_spots.dart';
 
 //data
-import 'data/food_data.dart';
-import 'models/food_model.dart';
+import '../data/food_data.dart';
+import '../models/food_model.dart';
 
-class HomeScreen extends StatefulWidget{
+class HomePage extends StatefulWidget{
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _HomePageState createState() => _HomePageState();
   
 }
 
-class _HomeScreenState extends State<HomeScreen>{
+class _HomePageState extends State<HomePage>{
 
   List<Food> _foods = foods;
 
