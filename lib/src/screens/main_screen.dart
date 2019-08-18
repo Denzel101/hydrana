@@ -64,7 +64,7 @@ class _MainScreenState extends State<MainScreen>{
           ),
            BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
-            title: Text("Favourites")
+            title: Text("Favourite")
 
           ),
            BottomNavigationBarItem(
@@ -75,6 +75,8 @@ class _MainScreenState extends State<MainScreen>{
         ],
       ),
       body: currentPage,
+      
+      
     );
   }
 }

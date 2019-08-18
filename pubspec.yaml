@@ -50,6 +50,7 @@ flutter:
   - assets/images/wine-bottle.jpeg
   - assets/images/bru-beer.jpg
   - assets/images/unsplash.jpg
+  - assets/images/unsplashbeer.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
