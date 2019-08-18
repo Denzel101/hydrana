@@ -75,7 +75,7 @@ class OrderCard extends StatelessWidget {
                   height: 5.0,
                 ),
                 Text(
-                  "Kes 250",
+                  "Kes 250/=",
                   style: TextStyle(
                     color: Colors.orangeAccent,
                     fontSize: 16.0,
