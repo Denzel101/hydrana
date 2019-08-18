@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hydrana/src/pages/signup_page.dart';
 //widgets
 
 class SignInPage extends StatefulWidget{
@@ -96,7 +97,18 @@ class _SignInPageState extends State<SignInPage>{
                   children: <Widget>[
                     Text("Don't have an account?", style: TextStyle(color: Color(0xFFBDC2CB), fontWeight: FontWeight.bold,fontSize: 15.0),),
                     SizedBox(width: 10.0,),
-                    Text("Sign up", style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize: 15.0),),
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context) => (SignUpPage()))); 
+                      },
+                        child: Text(
+                        "Sign up",
+                         style: TextStyle(
+                           color: Colors.blueAccent,
+                           fontWeight: FontWeight.bold,
+                           fontSize: 15.0),
+                           ),
+                    ),
                   ],
                 )
 
