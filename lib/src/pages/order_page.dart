@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../pages/signin_page.dart';
 //widgets
 import '../widgets/order_card.dart';
 
@@ -16,7 +17,7 @@ class _OrderPageState extends State<OrderPage>{
         title: Text(
           "Your Drinks Cart", style: TextStyle(color: Colors.black),
         ),
-        centerTitle: true,
+        centerTitle: false,
         backgroundColor: Colors.white,
         elevation: 0.0,
       ),
@@ -101,8 +102,14 @@ class _OrderPageState extends State<OrderPage>{
 
             ],
           ),
-          SizedBox(height: 40.0,),
-          Container(
+          SizedBox(
+            height: 40.0,
+            ),
+            GestureDetector(
+              onTap: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => SignInPage()));
+              },
+              child: Container(
             width: MediaQuery.of(context).size.width,
             height: 50.0,
             
@@ -122,6 +129,7 @@ class _OrderPageState extends State<OrderPage>{
               ),
           ),
           ),
+            ),
           
 
         ],
