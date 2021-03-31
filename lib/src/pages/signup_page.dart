@@ -80,7 +80,7 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
+      //resizeToAvoidBottomPadding: false,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 10.0),
         child: Column(
@@ -154,10 +154,11 @@ class _SignUpPageState extends State<SignUpPage> {
                   width: 10.0,
                 ),
                 GestureDetector(
-                  onTap: (){
-                     Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context) => (SignInPage())));
+                  onTap: () {
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (BuildContext context) => (SignInPage())));
                   },
-                    child: Text(
+                  child: Text(
                     "Sign in",
                     style: TextStyle(
                         color: Colors.blueAccent,

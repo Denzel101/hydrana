@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hydrana/src/scope/drink_scope.dart';
 //pages
 import '../pages/home_page.dart';
 import '../pages/order_page.dart';
@@ -6,77 +7,71 @@ import '../pages/profile_page.dart';
 import '../pages/favorite_page.dart';
 
 class MainScreen extends StatefulWidget {
+  final DrinkModel drinkModel;
 
-  @override 
+  MainScreen(this.drinkModel);
+
+  @override
   _MainScreenState createState() => _MainScreenState();
 }
 
-class _MainScreenState extends State<MainScreen>{
+class _MainScreenState extends State<MainScreen> {
+  int currentTabIndex = 0;
 
- int currentTabIndex = 0;
+  List<Widget> pages;
+  Widget currentPage;
 
- List<Widget> pages;
- Widget currentPage;
+  HomePage homePage;
+  OrderPage orderPage;
+  ProfilePage profilePage;
+  FavoritePage favoritePage;
 
- HomePage homePage;
- OrderPage orderPage;
- ProfilePage profilePage;
- FavoritePage favoritePage;
-
- @override
+  @override
   void initState() {
     // TODO: implement initState
-    super.initState();
+    widget.drinkModel.fetchDrinks();
     homePage = HomePage();
-    orderPage = OrderPage(); 
+    orderPage = OrderPage();
     favoritePage = FavoritePage();
     profilePage = ProfilePage();
     pages = [homePage, orderPage, favoritePage, profilePage];
-    
 
     currentPage = homePage;
+    super.initState();
   }
 
-  @override 
-  Widget build(BuildContext context){
-
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-        onTap: (int index){
+        onTap: (int index) {
           setState(() {
-           currentTabIndex = index;
-           currentPage = pages[index];
-
+            currentTabIndex = index;
+            currentPage = pages[index];
           });
-
         },
         currentIndex: currentTabIndex,
         type: BottomNavigationBarType.fixed,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            title: Text("Home")
+            label: ("Home"),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_cart),
-            title: Text("Orders")
-
+            label: ("Orders"),
           ),
-           BottomNavigationBarItem(
+          BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
-            title: Text("Favourite")
-
+            label: ("Favourite"),
           ),
-           BottomNavigationBarItem(
+          BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            title: Text("Profile")
-
+            label: ("Profile"),
           ),
         ],
       ),
       body: currentPage,
-      
-      
     );
   }
 }
